@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import LoginContainer from './containers/LoginContainer.js';
 import NavbarContainer from './containers/NavbarContainer.js';
 import MethodologiesContainer from './containers/MethodologiesContainer.js';
+import ProfileContainer from './containers/ProfileContainer.js';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
 			    <NavbarContainer />
 			    <LoginContainer />
 			    <MethodologiesContainer />
+          <ProfileContainer />
   			</div>
       </MuiThemeProvider>
     );
