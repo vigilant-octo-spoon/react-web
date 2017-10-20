@@ -9,7 +9,7 @@ class MethodologyView extends Component {
 	render() {
 	    return (
 	      	<Card >
-	      	<CardTitle title="Card title" subtitle="Card subtitle" />
+	      	<CardTitle title="Methodology title" subtitle="Methodology subtitle" />
 		        
 		        <CardHeader
       				title="Descripción"

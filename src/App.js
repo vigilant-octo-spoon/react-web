@@ -11,12 +11,12 @@ class App extends Component {
   render() {
     return (
     	<MuiThemeProvider>
-      		<div className="App">
+      	<div className="App">
 			    <NavbarContainer />
 			    <LoginContainer />
 			    <MethodologiesContainer />
   			</div>
-      	</MuiThemeProvider>
+      </MuiThemeProvider>
     );
   }
 }
