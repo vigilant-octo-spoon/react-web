@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router';
 import './App.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import LoginContainer from './containers/LoginContainer.js';
+import MethodologiesContainer from './containers/MethodologiesContainer.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    	<MuiThemeProvider>
+      	<div className="App">
+            <Route path={`${this.props.match.url}login`} component={LoginContainer} />
+            <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
+  			</div>
+      </MuiThemeProvider>
     );
   }
 }
