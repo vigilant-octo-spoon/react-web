@@ -32,7 +32,7 @@ class LoginContainer extends Component {
         const { dispatch } = this.props;
         const { user } = this.state;
         dispatch(postLogin(user.email, user.password)).then((response) => {
-            dispatch(push("/"));
+            dispatch(push("/methodologies"));
         }).catch((error) => {
             console.log(error);
         });

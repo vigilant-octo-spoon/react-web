@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-/*import LoginForm from '../components/LoginForm.js';
-*/
+import MethodologyView from '../components/MethodologyView.js';
+import MethodologiesList from '../components/MethodologiesList.js';
+
 class MethodologiesContainer extends Component {
     render() {
         return (
             <div>
+            <MethodologyView />
+            <MethodologiesList />
             </div>
-
         )
     }
 }
@@ -19,5 +21,4 @@ const mapStateToProps = state => {
     }
 }
 
-/*export default connect(mapStateToProps)(LoginPage);*/
-export default MethodologiesContainer
+export default connect(mapStateToProps)(MethodologiesContainer);

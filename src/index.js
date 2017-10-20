@@ -8,6 +8,7 @@ import store, { history } from './store';
 import './index.css';
 
 import App from './App';
+
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -15,7 +16,7 @@ ReactDOM.render(
         <ConnectedRouter history={ history }>
             <div>
                 <Switch>
-                    <Route exact path="/login" render={() => (<App />)} />
+                    <Route path="/" component={App} />
                     <Route render={() => (<h1>Missss</h1>)} />
                 </Switch>
             </div>
