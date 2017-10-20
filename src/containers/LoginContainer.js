@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
 import { postLogin } from '../actions/user.js';
 import LoginForm from '../components/LoginForm.js';
@@ -31,7 +32,9 @@ class LoginContainer extends Component {
         const { dispatch } = this.props;
         const { user } = this.state;
         dispatch(postLogin(user.email, user.password)).then((response) => {
-            console.log(response);
+            dispatch(push("/"));
+        }).catch((error) => {
+            console.log(error);
         });
     }
 

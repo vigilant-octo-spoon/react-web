@@ -11,8 +11,10 @@ export const postLogin = (email, password) => {
         const data = { email, password }
         return new API("POST", "/sessions", { data }).exec().then((response) => {
             dispatch(postLoginSuccess(response.data));
+            return response;
         }).catch((error) => {
-            dispatch(postLoginFailed());
+            dispatch(postLoginFailed(error));
+            throw error;
         });
     }
 }
