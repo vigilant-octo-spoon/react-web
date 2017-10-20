@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const BASE_URL = process.env.BASE_API_URL || "http://localhost:5000";
 
-export class Request {
+export class API {
     constructor(method, endpoint, config) {
         this._token = null;
         this._request_config = {

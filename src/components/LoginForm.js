@@ -14,18 +14,24 @@ class LoginForm extends Component {
 		        		<AppBar
 		           		title="Login"
 			           	/>
-			           	<TextField
-		            		 hintText="Enter your Username"
-				             floatingLabelText="Username"
-				        />
-				        <br/>
-				        <TextField
-				  	     	type="password"
-				         	hintText="Enter your Password"
-				            floatingLabelText="Password"
-				        />
-				        <br/>
-				        <RaisedButton label="Submit" onClick=""/>
+						<form onSubmit={ this.props.onSubmit }>
+							<TextField
+								hintText="Enter your email"
+								floatingLabelText="Email"
+								name="email"
+								onChange={ this.props.onChange }
+							/>
+							<br/>
+							<TextField
+								type="password"
+								hintText="Enter your Password"
+								floatingLabelText="Password"
+								name="password"
+								onChange={ this.props.onChange }
+							/>
+							<br/>
+							<RaisedButton label="Submit" onClick={ this.props.onSubmit } />
+						</form>
 		          	</div>
 		  	  	</MuiThemeProvider>
 	    	</div>
