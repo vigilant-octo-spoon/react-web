@@ -9,7 +9,6 @@ class LoginContainer extends Component {
             <div>
                 <LoginForm />
             </div>
-
         )
     }
 }

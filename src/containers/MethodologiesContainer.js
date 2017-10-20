@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-/*import LoginForm from '../components/LoginForm.js';
-*/
+import MethodologyView from '../components/MethodologyView.js';
+
 class MethodologiesContainer extends Component {
     render() {
         return (
             <div>
+            <MethodologyView />
             </div>
-
         )
     }
 }
