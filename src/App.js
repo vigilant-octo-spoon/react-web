@@ -16,6 +16,7 @@ class App extends Component {
             <NavbarContainer />
             <Route path={`${this.props.match.url}login`} component={SessionContainer} />
             <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
+            <MethodologiesContainer />
   			</div>
       </MuiThemeProvider>
     );
