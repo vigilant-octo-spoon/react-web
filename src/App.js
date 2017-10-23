@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import './App.css';
+import './styles/App.scss';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import LoginContainer from './containers/LoginContainer.js';
+import SessionContainer from './containers/SessionContainer.js';
 import MethodologiesContainer from './containers/MethodologiesContainer.js';
+import NavbarContainer from './containers/NavbarContainer.js';
+
 
 class App extends Component {
   render() {
     return (
     	<MuiThemeProvider>
       	<div className="App">
-            <Route path={`${this.props.match.url}login`} component={LoginContainer} />
+            <NavbarContainer />
+            <Route path={`${this.props.match.url}login`} component={SessionContainer} />
             <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
+            <MethodologiesContainer />
+            <MethodologiesContainer />
   			</div>
       </MuiThemeProvider>
     );

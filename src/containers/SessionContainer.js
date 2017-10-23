@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import '../styles/Session.scss';
 
 import { postLogin } from '../actions/user.js';
 import LoginForm from '../components/LoginForm.js';
 
-class LoginContainer extends Component {
+
+class SessionContainer extends Component {
     constructor(props) {
         super(props);
 
@@ -40,8 +42,8 @@ class LoginContainer extends Component {
 
     render() {
         return (
-            <div>
-                <LoginForm
+            <div className="SessionContainer">
+                <LoginForm 
                     onChange={ this.onChange }
                     onSubmit={ this.onSubmit }
                 />
@@ -56,4 +58,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(LoginContainer);
+export default connect(mapStateToProps)(SessionContainer);
