@@ -9,7 +9,7 @@ class MethodologiesContainer extends Component {
         return (
             <div>
             <MethodologyView />
-            <MethodologiesList />
+            
             </div>
         )
     }
