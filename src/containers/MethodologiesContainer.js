@@ -11,6 +11,8 @@ class MethodologiesContainer extends Component {
         return (
             <div>
             <MethodologyView />
+            <MethodologiesList />
+            <h2> Comentarios</h2> 
             <List>
                 <MethodologiesComment />
             </List>
