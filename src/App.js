@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { connect } from 'react-redux';
+import Route from './AuthRoute';
 
 import './styles/App.scss';
 

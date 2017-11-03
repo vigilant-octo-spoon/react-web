@@ -8,6 +8,9 @@ import LoginForm from '../components/LoginForm.js';
 
 
 class SessionContainer extends Component {
+
+    static isPublic = true;
+
     constructor(props) {
         super(props);
 
