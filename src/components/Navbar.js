@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
@@ -15,8 +17,7 @@ class Navbar extends Component {
 		super(props);
 
 		this.state = {
-			showLoginButton : false,
-			open : false
+			open: false
 		}
 
 		this.changeLoginButtonVisibility = this.changeLoginButtonVisibility.bind(this);
@@ -39,13 +40,13 @@ class Navbar extends Component {
            			title="Red Lab Sur"
            			onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
            			iconElementRight={<ToolbarGroup>
-           				       			{ !this.state.showLoginButton && 
-           									<RaisedButton label="Sign up"
+           				       			{ !this.props.logged && 
+           									<RaisedButton label="Ingresar"
            												  onClick={ this.changeLoginButtonVisibility }
            												  />
            								}
-           								{ this.state.showLoginButton && 
-           									<RaisedButton label="Login"
+           								{ this.props.logged && 
+           									<RaisedButton label="Salir"
            												  onClick={ this.changeLoginButtonVisibility }
            												  />
            								}
@@ -69,4 +70,10 @@ class Navbar extends Component {
 	}
 }
 
-export default Navbar;
+const mapStateToProps = (state, ownProps) => {
+	return {
+		logged: state.logged,
+	}
+}
+
+export default connect(mapStateToProps)(Navbar);

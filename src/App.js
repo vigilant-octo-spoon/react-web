@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import './styles/App.scss';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { connect } from 'react-redux';
 
+import './styles/App.scss';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import SessionContainer from './containers/SessionContainer.js';
 import MethodologiesContainer from './containers/MethodologiesContainer.js';
 import NavbarContainer from './containers/NavbarContainer.js';
@@ -16,7 +18,6 @@ class App extends Component {
             <NavbarContainer />
             <Route path={`${this.props.match.url}login`} component={SessionContainer} />
             <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
-            <MethodologiesContainer />
   			</div>
       </MuiThemeProvider>
     );
