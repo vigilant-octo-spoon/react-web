@@ -28,4 +28,11 @@ const mapStateToProps = (state) => {
     }
 }
 
+AuthRoute.propTypes = {
+    componente: PropTypes.oneOfType([
+        PropTypes.element,
+        PropTypes.func
+    ])
+};
+
 export default connect(mapStateToProps)(AuthRoute);

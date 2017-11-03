@@ -20,5 +20,4 @@ const mapStateToProps = state => {
     }
 }
 
-/*export default connect(mapStateToProps)(LoginPage);*/
-export default NavbarContainer
+export default connect(mapStateToProps)(NavbarContainer);
