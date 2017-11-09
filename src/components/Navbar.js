@@ -59,7 +59,7 @@ class Navbar extends Component {
 		          <MenuItem onClick={this.handleClose}>Metodologías</MenuItem>
 		          <MenuItem onClick={this.handleClose}>Ir al Librillo</MenuItem>
 		          <Divider/>
-		          <MenuItem onClick={this.handleClose}>Cerrar sesisón</MenuItem>
+		          <MenuItem onClick={this.handleLogoutClick}>Cerrar sesisón</MenuItem>
 		        </Drawer>
 	    	</div>
 	    )
