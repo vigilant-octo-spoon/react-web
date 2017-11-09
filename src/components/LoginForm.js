@@ -8,7 +8,7 @@ class LoginForm extends Component {
 	render() {
 	    return (
 	      	<div className="LoginForm">	        	
-        		<h1>Login</h1>
+        		<h1 className="LoginForm">Login</h1>
 	           	<TextField
             		 hintText="Enter your email"
 		             floatingLabelText="Email"
@@ -25,7 +25,6 @@ class LoginForm extends Component {
 		        />
 		        <br/>
 		        <RaisedButton label="Submit" onClick={ this.props.onSubmit } />
-		        <p className="register-p"> ¿No tienes una cuenta? <a href="#">Registrate</a></p>
 	    	</div>
 
 	    )
