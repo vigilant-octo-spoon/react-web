@@ -10,11 +10,6 @@ import MethodologiesContainer from './containers/MethodologiesContainer.js';
 import NavbarContainer from './containers/NavbarContainer.js';
 import MethodologiesTable from './components/MethodologiesTable.js';
 
-// react-table
-import makeData from "./Utils";
-import matchSorter from 'match-sorter'
-
-
 class App extends Component {
 
   render() {
@@ -24,7 +19,6 @@ class App extends Component {
             <NavbarContainer />
             <Route path={`${this.props.match.url}login`} component={SessionContainer} />
             <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
-  			 <MethodologiesTable />
         </div>
         
       </MuiThemeProvider>

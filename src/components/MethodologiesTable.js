@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import makeData from "../Utils";
 import matchSorter from 'match-sorter'
 
 // Import React Table
@@ -12,7 +11,7 @@ class MethodologiesTable extends Component {
 	constructor() {
     super();
     this.state = {
-      data: makeData()
+      data: []
     };
   }
 
