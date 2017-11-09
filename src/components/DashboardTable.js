@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 
+import DataTables from 'material-ui-datatables';
+
 class DashboardTable extends Component {
     render() {
         return (
-            <h1>DashboardTable</h1>
+            <div>
+                <h1>DashboardTable</h1>
+                <DataTables
+                />
+            </div>
         )
     }
 }
