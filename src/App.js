@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Switch } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+import store, { history } from './store';
 
-import './styles/App.scss';
+import './index.css';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MethodologiesContainer from './containers/MethodologiesContainer.js';
-import NavbarContainer from './containers/NavbarContainer.js';
-import MethodologiesTable from './components/MethodologiesTable.js';
+import Dashboard from './Dashboard';
+import Route from './AuthRoute.js';
+import SessionContainer from './containers/SessionContainer.js';
 
 class App extends Component {
-
-  render() {
-    return (
-    	<MuiThemeProvider>
-      	<div className="App">
-            <NavbarContainer />
-            <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
-        </div>
-        
-      </MuiThemeProvider>
-    );
-  }
+    render() {
+        return (
+            <Provider store={ store }>
+                <ConnectedRouter history={ history }>
+                    <div>
+                        <Switch>
+                            <Route exact path="/login" component={SessionContainer} />
+                            <Route path="/" component={Dashboard} />
+                        </Switch>
+                    </div>
+                </ConnectedRouter>
+            </Provider>
+        )
+    }
 }
 
 export default App;
