@@ -9,6 +9,7 @@ import SessionContainer from './containers/SessionContainer.js';
 import MethodologiesContainer from './containers/MethodologiesContainer.js';
 import NavbarContainer from './containers/NavbarContainer.js';
 import MethodologiesTable from './components/MethodologiesTable.js';
+import StepsContainer from './containers/StepsContainer.js';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
             <NavbarContainer />
             <Route path={`${this.props.match.url}login`} component={SessionContainer} />
             <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
+        <StepsContainer/>
         </div>
         
       </MuiThemeProvider>
