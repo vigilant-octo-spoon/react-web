@@ -37,6 +37,7 @@ class Navbar extends Component {
 	handleClose = () => this.setState({open: false});
 
 	render() {
+		const { user } = this.props;
 	    return (
 	      	<div>
         		<AppBar
@@ -54,16 +55,22 @@ class Navbar extends Component {
           			open={this.state.open}
           			onRequestChange={(open) => this.setState({open})}
 		        >
-		          <CardTitle title="Carlos Alvarez" subtitle="ctalvarez@uc.cl" />
+		          <CardTitle title={`${user.name} ${user.last_name}`} subtitle={ user.email } />
 		          <Divider/>
 		          <MenuItem onClick={this.handleClose}>Metodologías</MenuItem>
 		          <MenuItem onClick={this.handleClose}>Ir al Librillo</MenuItem>
 		          <Divider/>
-		          <MenuItem onClick={this.handleLogoutClick}>Cerrar sesisón</MenuItem>
+		          <MenuItem onClick={this.handleLogoutClick}>Cerrar sesión</MenuItem>
 		        </Drawer>
 	    	</div>
 	    )
 	}
 }
 
-export default connect()(Navbar);
+const mapStateToProps = (state) => {
+	return {
+		user: state.user,
+	}
+}
+
+export default connect(mapStateToProps)(Navbar);
