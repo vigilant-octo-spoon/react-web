@@ -8,7 +8,7 @@ export const DESTROY_SESSION = 'user/DESTROY_SESSION';
 export const postLogin = (email, password) => {
     return (dispatch) => {
         dispatch({ type: POST_LOGIN });
-        const data = { email, password }
+        const data = { email, password, admin: true }
         return new API("POST", "/sessions", { data }).exec().then((response) => {
             dispatch(postLoginSuccess(response.data));
             return response;
