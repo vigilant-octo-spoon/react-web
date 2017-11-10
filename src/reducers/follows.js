@@ -1,6 +1,5 @@
 import {
-    GET_FOLLOWS_SUCCESS,
-    GET_FOLLOWS_FAILURE
+    GET_FOLLOWS_SUCCESS
 } from "../actions/follows.js";
 import { DESTROY_SESSION } from "../actions/user.js";
 

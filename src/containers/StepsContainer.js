@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
-import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { Card, CardTitle } from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import PlanificarView from '../components/PlanificarView.js'
 import RecursosView from '../components/RecursosView.js'
