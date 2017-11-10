@@ -24,7 +24,7 @@ class LoginForm extends Component {
 					onChange={ this.props.onChange }
 		        />
 		        <br/>
-		        <RaisedButton label="Submit" onClick={ this.props.onSubmit } />
+		        <RaisedButton className="submit-button" label="Submit" onClick={ this.props.onSubmit } />
 	    	</div>
 
 	    )
