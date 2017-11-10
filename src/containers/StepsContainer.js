@@ -11,7 +11,7 @@ import BitacoraView from '../components/BitacoraView.js'
 import EvaluationView from '../components/EvaluationView.js'
 import ReportView from '../components/ReportView.js'
 
-import '../styles/Steps.scss';
+import '../styles/Steps.css';
 
 class StepsContainer extends Component {
     render() {
@@ -35,50 +35,39 @@ class StepsContainer extends Component {
                                 text={ `${follow.step3.planning.start_date} - ${follow.step3.planning.finish_date}` }
                 />
                 <PlanificarView title="Equipo de trabajo"
-                                members={follow.step3.work_roles.map((work_role) => `${work_role.name} - ${work_role.role}`)}
+                                members={follow.step3.work_roles.map((work_role) => {
+                                    return { name: work_role.name, role: work_role.role }
+                                })}
                                 id="team-view"
                 />
-              <RecursosView recursos={[{item: 'caca', available:'sí', acquisition: 'ya adquerido'},
-                                      {item: 'pico', available:'no', acquisition: 'se espera que el colegio coopere'}]}
-                            id="recursos-view"
-                            conditions={[{
-                                "item": "Permisos para salir del colegio",
-                                "info": "Enviar solicitud a los padres para que permitan la escurcion al museo"},
-                                {"item": "Fijar una fecha",
-                                "info": "Encontrar el mejor dia con la secretaria docente, en el que puedan salir toda la jornada"}]}
-              />
-              <DifusionView broadcast={[
-                                          {
-                                            "moment_of_implementation": "Antes",
-                                            "audience": "Alumnos",
-                                            "diffusion_channel": "Comunicacion",
-                                            "objective": "Informar de la salida al museo"
-                                          },
-                                          {
-                                            "moment_of_implementation": "Durante",
-                                            "audience": "Alumnos",
-                                            "diffusion_channel": "Guia de trabajo",
-                                            "objective": "Entregar y presentar el proyecto"
-                                          },
-                                          {
-                                            "moment_of_implementation": "Despues",
-                                            "audience": "Alumnos",
-                                            "diffusion_channel": "Auto Evaluacion",
-                                            "objective": "Que evaluen su propio desempeño y el proyecto"                                          },
-                                        ]}
-                            id="recursos-view"
+                <RecursosView
+                    id="recursos-view"
+                    recursos={
+                        follow.step3.resources.map((resource) => {
+                            return {
+                                item: resource.item,
+                                available: resource.available ? "sí" : "no",
+                                acquisition: resource.acquisition,
+                            }
+                        })
+                    }
+                    conditions={
+                        follow.step3.conditions.map((condition) => {
+                            return {
+                                item: condition.item,
+                                info: condition.info,
+                            }
+                        })
+                    }
+                />
+
+              <DifusionView
+                broadcast={ follow.step3.broadcasts }
+                id="recursos-view"
               />   
             <Divider />
             <CardTitle title="Paso 4: Implementación" />  
-              <BitacoraView binnacles={[{
-                "start_date": "2017-10-23",
-                "finish_date": "2017-10-23",
-                "objectives": "Presentar metodologia",
-                "observations": "Los alumnos se comportaron muy bien en las presentaciones, parecian interesados.....",
-                "advances": "Las cosas han ido bien, destacamos que......",
-                "obstacles": "Un grupo pequeño no puede unirse a la salida al museo por indicacion de sus padres, hay que ver como solucionar esto.",
-                "ideas": "Pedirles a los alumnos que lleven camara, ademas podemos hacer algun tipo de juego en la salida al museo."
-                  }]}
+              <BitacoraView binnacles={ follow.step4.binnacles }
                 />
             <Divider />
             <CardTitle title="Paso 5: Evaluación" />  
