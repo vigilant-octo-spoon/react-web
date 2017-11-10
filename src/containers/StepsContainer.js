@@ -20,6 +20,7 @@ class StepsContainer extends Component {
                 <Card >
                 <CardTitle title={ follow.name } subtitle={`${user.name} - ${user.email}`} />
                 <Divider />
+                
                 <CardTitle title="Planificación" />  
                 <PlanificarView title="Nombre de la iniciativa"
                                 text={ follow.step3.planning.initiative_name }

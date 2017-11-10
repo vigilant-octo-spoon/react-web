@@ -1,9 +1,35 @@
-.material-style {
-	font-family: 'Helvetica';
+.subtitle {
+	font-size: 14px;
+    line-height: 16px;
+    height: 16px;
+    margin: 4px 0px 0px;
+    color: rgba(0, 0, 0, 0.54);
+    overflow: hidden;
 }
-
+.list-item-style {
+	border: 10px;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    font-size: 15px;
+    font-weight: inherit;
+    position: relative;
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 16px;
+    background: none;
+}
 .card-header {
 	font-weight: bolder;
+}
+.list-padding {
+	margin-left: 0px;
+    padding: 16px 16px 16px 72px;
+    position: relative;
 }
 
 #team-view {
@@ -22,6 +48,14 @@
 }
 .members-list {
 	margin-top: 0;
+	margin-left: 75px;
+	span {
+		@extend .list-item-style;
+	}
+	p {
+		display: inline;
+		@extend .subtitle;
+	}
 }
 .planificar-list {
 	margin-top: 0 !important;
@@ -30,27 +64,25 @@
 	padding-bottom: 0 !important;
 }
 
-ol {
-	@extend .material-style;
-	font-size: 16px;
-	color: #616161;
-	p {
-		font-size: 14px;
-		font-weight: lighter;
-		display: inline;
-		color: #9E9E9E;
-	}
-}
 #recursos-view {
-	margin-left: 15px;
+	@extend .list-padding;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
 	h3 {
 		font-weight: normal;
 	}
-	.recurso-item {
-		margin-top: 0 !important;
-		padding-top: 0 !important;
-		margin-bottom: 0 !important;
-		padding-bottom: 0 !important;
-		border: 1px solid green !important;
+	ol {
+			padding-bottom:0 !important;
+			margin-bottom:0 !important;
+		}
+	span {
+		@extend .list-item-style;
+	}
+	p {
+		display: inline;
+		@extend .subtitle;
+	}
+	.conditions {
+		margin-left: 25px;
 	}
 }

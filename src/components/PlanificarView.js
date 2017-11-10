@@ -20,22 +20,24 @@ class PlanificarView extends Component {
         <div id={ this.props.id } style={divStyle} >
 	      	<List className="planificar-list">
             <ListItem
+              insetChildren={true}
               className="list-item"
               primaryText={ this.props.title }
               secondaryText={ this.props.members ? "" : <p> {this.props.text} </p> }
             />
-          </List>
-              { this.props.members && 
+            { this.props.members && 
                 <ol className="members-list">
                 {
                   this.props.members.map((member) =>
                     <li> 
-                      <span className="item-title"> {member.name} </span>: <p>{member.role} </p>
+                      <span className="item-title"> {member.name} -</span> <p>{member.role} </p>
                      </li>
                   )
                 }
                 </ol>
               }
+          </List>
+              
       </div>
 	    )
 	}
