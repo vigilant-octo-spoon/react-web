@@ -20,6 +20,9 @@ class StepsContainer extends Component {
                 <Card >
                 <CardTitle title={ follow.name } subtitle={`${user.name} - ${user.email}`} />
                 <Divider />
+
+                { follow.step > 3 &&
+                <div>
                 
                 <CardTitle title="Planificación" />  
                 <PlanificarView title="Nombre de la iniciativa"
@@ -66,18 +69,30 @@ class StepsContainer extends Component {
                 id="recursos-view"
               />   
             <Divider />
+            </div>
+            }
+            { follow.step > 4 &&
+            <div>
             <CardTitle title="Paso 4: Implementación" />  
               <BitacoraView binnacles={ follow.step4.binnacles }
                 />
             <Divider />
+            </div>
+            }
+            { follow.step > 5 &&
+            <div>
             <CardTitle title="Paso 5: Evaluación" />  
               <EvaluationView evaluation={[ follow.step5.evaluation ]}
                 />
             <Divider />
+            </div>
+            }
+            { follow.step > 6 &&
+            <div>
             <CardTitle title="Paso 6: Comunicar" />  
               <ReportView report={[ follow.step6.report ]}
                 />
-            }
+            </div>
             }
             </Card>
   </div>

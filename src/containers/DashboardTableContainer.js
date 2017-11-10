@@ -62,13 +62,15 @@ const processFollowsObject = (follows) => {
             return {
                 id: follow.id,
                 name: `${user.name} ${user.last_name}`,
-                place: follow.step3.planning.place,
+                place: follow.step3.planning && follow.step3.planning.place,
                 methodology: follow.name,
-                start_date: follow.step3.planning.start_date,
+                start_date: follow.step3.planning && follow.step3.planning.start_date,
+                current_step: follow.step,
             }
         })
         experiences = concat(experiences, user_experiences);
     }
+    console.log(experiences);
     return experiences;
 }
 
