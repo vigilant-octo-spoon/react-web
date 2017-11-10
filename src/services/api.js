@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = process.env.BASE_API_URL || "http://localhost:5000";
+export const BASE_URL = process.env.REACT_APP_BASE_API_URL || "http://localhost:5000";
 
 export class API {
     constructor(method, endpoint, config) {
@@ -16,7 +16,7 @@ export class API {
     withAuth(token) {
         this._request_config = Object.assign(this._request_config, {
             headers: {
-                "Authorization": `JWT ${token}`
+                "Token": token,
             }
         });
         return this;
