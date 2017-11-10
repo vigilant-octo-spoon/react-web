@@ -29,7 +29,9 @@ class PlanificarView extends Component {
                 <ol className="members-list">
                 {
                   this.props.members.map((member) =>
-                    <li> {member} </li>
+                    <li> 
+                      <span className="item-title"> {member.name} </span>: <p>{member.role} </p>
+                     </li>
                   )
                 }
                 </ol>
