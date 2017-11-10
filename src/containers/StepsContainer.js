@@ -9,7 +9,7 @@ import RecursosView from '../components/RecursosView.js'
 import DifusionView from '../components/DifusionView.js'
 import BitacoraView from '../components/BitacoraView.js'
 
-import '../styles/Steps.scss';
+import '../styles/Steps.css';
 
 class StepsContainer extends Component {
     render() {

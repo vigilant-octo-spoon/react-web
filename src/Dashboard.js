@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 
-import './styles/App.scss';
+import './styles/App.css';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavbarContainer from './containers/NavbarContainer.js';

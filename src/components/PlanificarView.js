@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {List, ListItem} from 'material-ui/List';
 
-import '../styles/Steps.scss';
+import '../styles/Steps.css';
 
 
 const divStyle = {
