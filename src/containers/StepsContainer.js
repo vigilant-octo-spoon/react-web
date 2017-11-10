@@ -8,6 +8,8 @@ import PlanificarView from '../components/PlanificarView.js'
 import RecursosView from '../components/RecursosView.js'
 import DifusionView from '../components/DifusionView.js'
 import BitacoraView from '../components/BitacoraView.js'
+import EvaluationView from '../components/EvaluationView.js'
+import ReportView from '../components/ReportView.js'
 
 import '../styles/Steps.scss';
 
@@ -35,17 +37,6 @@ class StepsContainer extends Component {
                 <PlanificarView title="Equipo de trabajo"
                                 members={follow.step3.work_roles.map((work_role) => `${work_role.name} - ${work_role.role}`)}
                                 id="team-view"
-                />
-                <RecursosView
-                    recursos={
-                        follow.step3.resources.map((resource) => {
-                            return {
-                                item: resource.item,
-                                available: resource.available ? "sí" : "no",
-                                acquisition: resource.acquisition,
-                            }
-                        })
-                    }
                 />
               <RecursosView recursos={[{item: 'caca', available:'sí', acquisition: 'ya adquerido'},
                                       {item: 'pico', available:'no', acquisition: 'se espera que el colegio coopere'}]}
@@ -88,6 +79,23 @@ class StepsContainer extends Component {
                 "obstacles": "Un grupo pequeño no puede unirse a la salida al museo por indicacion de sus padres, hay que ver como solucionar esto.",
                 "ideas": "Pedirles a los alumnos que lleven camara, ademas podemos hacer algun tipo de juego en la salida al museo."
                   }]}
+                />
+            <Divider />
+            <CardTitle title="Paso 5: Evaluación" />  
+              <EvaluationView evaluation={[{
+                            comments_connect: "Opinion de la primera etapa de ver y conocer las metodologias disponibles",
+                            comments_select: "Opinion de la segunda etapa de elegir metodologia",
+                            comments_planning: "Opinion de la 3° etapa de planificar todo el proceso",
+                            comments_implementation: "Opinion  de la 4° etapa de la implementacion, que mejorar, que funciono...",
+                            users_reflection: "Reflecciones de los usuarios de la innovacion, ordenar sus ideas aca.",
+                            users_suggestions: "Sugerencias de los usuarios de la innovacion" 
+                            }]}
+                />
+            <Divider />
+            <CardTitle title="Paso 6: Comunicar" />  
+              <ReportView report={[{
+                             "comment": "Esta es la etapa 6 de comunicar, agrgando un comentario final de la opinion y el desarrollo de la metodologia."
+                            }]}
                 />
 
 
