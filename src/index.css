@@ -4,6 +4,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-#dashboard-table {
+#dashboard-table, #steps-container {
   margin: 20px 40px;
 }
