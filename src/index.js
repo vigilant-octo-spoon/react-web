@@ -19,5 +19,5 @@ if (module.hot) {
     })
 }
 
-injectTapEventPlugin();
+// injectTapEventPlugin();
 registerServiceWorker();

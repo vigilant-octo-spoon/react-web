@@ -13,20 +13,20 @@ class RecursosView extends Component {
           <ol>
             {this.props.recursos.map((rec) => 
                 <li>
-                  <span className="item-title"> {rec.item} </span>: <p>Disponible: {rec.available}, Adquisición: {rec.acquisition} </p>
+                  <span className="item-title"> {rec.item}: </span><p> Disponible: {rec.available}, Adquisición: {rec.acquisition} </p>
                 </li>
             )}
           </ol>
-
-          <h4> Condiciones necesarias </h4>
-          <ol>
-            {this.props.conditions.map((cond) => 
-                <li>
-                  <span className="item-title"> {cond.item} </span>:
-                   <p>Disponible: {cond.info} </p>
-                </li>
-            )}
-          </ol>
+          <div className="conditions">
+            <h4> Condiciones necesarias </h4>
+            <ol >
+              {this.props.conditions.map((cond) => 
+                  <li>
+                    <span className="item-title">{cond.item}:</span> <p> Disponible: {cond.info} </p>
+                  </li>
+              )}
+            </ol>
+          </div>
       </div>
 	    )
 	}
