@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { push } from "react-router-redux";
 import concat from "lodash/concat";
 
 import { getFollows } from "../actions/follows.js";
@@ -38,10 +39,8 @@ class DashboardTableContainer extends Component {
     }
 
     onCellClick(rowIndex, colIndex, row, col) {
-        console.log("rowIndex", rowIndex);
-        console.log("colIndex", colIndex);
-        console.log("row", row);
-        console.log("col", col);
+        const { dispatch } = this.props;
+        dispatch(push(`/follows/${row.id}`));
     }
 
     render() {
