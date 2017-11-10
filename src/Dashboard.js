@@ -4,9 +4,9 @@ import { Route } from 'react-router';
 import './styles/App.scss';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MethodologiesContainer from './containers/MethodologiesContainer.js';
 import NavbarContainer from './containers/NavbarContainer.js';
-import MethodologiesTable from './components/MethodologiesTable.js';
+import DashboardTableContainer from './containers/DashboardTableContainer.js';
+import MethodologiesContainer from './containers/MethodologiesContainer.js';
 
 class Dashboard extends Component {
 
@@ -15,9 +15,8 @@ class Dashboard extends Component {
     	<MuiThemeProvider>
       	<div id="dashboard" className="App">
             <NavbarContainer />
-            <Route path={`${this.props.match.url}methodologies`} component={MethodologiesContainer} />
+            <Route path={`${this.props.match.url}dashboard`} component={DashboardTableContainer} />
         </div>
-        
       </MuiThemeProvider>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -9,6 +9,8 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import {CardTitle} from 'material-ui/Card';
+
+import { destroySession } from "../actions/user.js";
 
 
 class Navbar extends Component {
@@ -20,11 +22,12 @@ class Navbar extends Component {
 			open: false
 		}
 
-		this.changeLoginButtonVisibility = this.changeLoginButtonVisibility.bind(this);
+		this.handleLogoutClick = this.handleLogoutClick.bind(this);
 	}
 
-	changeLoginButtonVisibility() {
-		this.setState({ showLoginButton : !this.state.showLoginButton });
+	handleLogoutClick() {
+		const { dispatch } = this.props;
+		dispatch(destroySession());
 	}
 
 	handleToggle(){
@@ -34,22 +37,16 @@ class Navbar extends Component {
 	handleClose = () => this.setState({open: false});
 
 	render() {
+		const { user } = this.props;
 	    return (
 	      	<div>
         		<AppBar
            			title="Red Lab Sur"
            			onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
            			iconElementRight={<ToolbarGroup>
-           				       			{ !this.props.logged && 
-           									<RaisedButton label="Ingresar"
-           												  onClick={ this.changeLoginButtonVisibility }
-           												  />
-           								}
-           								{ this.props.logged && 
            									<RaisedButton label="Salir"
-           												  onClick={ this.changeLoginButtonVisibility }
+           												  onClick={ this.handleLogoutClick }
            												  />
-           								}
            							  </ToolbarGroup>}
 	           	/>
 	            <Drawer 
@@ -58,21 +55,21 @@ class Navbar extends Component {
           			open={this.state.open}
           			onRequestChange={(open) => this.setState({open})}
 		        >
-		          <CardTitle title="Carlos Alvarez" subtitle="ctalvarez@uc.cl" />
+		          <CardTitle title={`${user.name} ${user.last_name}`} subtitle={ user.email } />
 		          <Divider/>
 		          <MenuItem onClick={this.handleClose}>Metodologías</MenuItem>
 		          <MenuItem onClick={this.handleClose}>Ir al Librillo</MenuItem>
 		          <Divider/>
-		          <MenuItem onClick={this.handleClose}>Cerrar sesisón</MenuItem>
+		          <MenuItem onClick={this.handleLogoutClick}>Cerrar sesión</MenuItem>
 		        </Drawer>
 	    	</div>
 	    )
 	}
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 	return {
-		logged: state.logged,
+		user: state.user,
 	}
 }
 
