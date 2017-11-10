@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { push } from "react-router-redux";
 
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -22,7 +23,14 @@ class Navbar extends Component {
 			open: false
 		}
 
+		this.handleExperienceClick = this.handleExperienceClick.bind(this);
 		this.handleLogoutClick = this.handleLogoutClick.bind(this);
+	}
+
+	handleExperienceClick() {
+		const { dispatch } = this.props;
+		dispatch(push("/dashboard"));
+		this.handleToggle();
 	}
 
 	handleLogoutClick() {
@@ -57,8 +65,7 @@ class Navbar extends Component {
 		        >
 		          <CardTitle title={`${user.name} ${user.last_name}`} subtitle={ user.email } />
 		          <Divider/>
-		          <MenuItem onClick={this.handleClose}>Metodologías</MenuItem>
-		          <MenuItem onClick={this.handleClose}>Ir al Librillo</MenuItem>
+		          <MenuItem onClick={this.handleExperienceClick}>Experiencias</MenuItem>
 		          <Divider/>
 		          <MenuItem onClick={this.handleLogoutClick}>Cerrar sesión</MenuItem>
 		        </Drawer>

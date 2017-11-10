@@ -5,10 +5,10 @@ import '../styles/Steps.scss';
 
 
 const divStyle = {
-  'margin-top': 0,
-  'padding-top': 0,
-  'margin-bottom': 0,
-  'padding-bottom': 0
+  'marginTop': 0,
+  'paddingTop': 0,
+  'marginBottom': 0,
+  'paddingBottom': 0
 };
 
 class PlanificarView extends Component {
