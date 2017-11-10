@@ -71,30 +71,12 @@ class StepsContainer extends Component {
                 />
             <Divider />
             <CardTitle title="Paso 5: Evaluación" />  
-              <EvaluationView evaluation={[{
-                            comments_connect: "Opinion de la primera etapa de ver y conocer las metodologias disponibles",
-                            comments_select: "Opinion de la segunda etapa de elegir metodologia",
-                            comments_planning: "Opinion de la 3° etapa de planificar todo el proceso",
-                            comments_implementation: "Opinion  de la 4° etapa de la implementacion, que mejorar, que funciono...",
-                            users_reflection: "Reflecciones de los usuarios de la innovacion, ordenar sus ideas aca.",
-                            users_suggestions: "Sugerencias de los usuarios de la innovacion" 
-                            }]}
+              <EvaluationView evaluation={[ follow.step5.evaluation ]}
                 />
             <Divider />
             <CardTitle title="Paso 6: Comunicar" />  
-              <ReportView report={[{
-                             "comment": "Esta es la etapa 6 de comunicar, agrgando un comentario final de la opinion y el desarrollo de la metodologia."
-                            }]}
+              <ReportView report={[ follow.step6.report ]}
                 />
-
-
-
-
-
-                <CardActions>
-                  <FlatButton label="Action 1" />
-                  <FlatButton label="Action 2" />
-                </CardActions>
             }
             }
             </Card>
