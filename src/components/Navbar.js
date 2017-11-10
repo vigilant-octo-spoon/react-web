@@ -4,7 +4,7 @@ import { push } from "react-router-redux";
 
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import { ToolbarGroup } from 'material-ui/Toolbar';
 
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
