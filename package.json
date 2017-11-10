@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "lodash": "^4.17.4",
     "match-sorter": "^2.0.2",
     "material-ui": "^0.19.4",
+    "material-ui-datatables": "^0.18.2",
     "namor": "^1.0.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

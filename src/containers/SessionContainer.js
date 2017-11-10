@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import '../styles/Session.scss';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { postLogin } from '../actions/user.js';
 import LoginForm from '../components/LoginForm.js';
 
 
 class SessionContainer extends Component {
+
+    static isPublic = true;
+
     constructor(props) {
         super(props);
 
@@ -34,7 +38,7 @@ class SessionContainer extends Component {
         const { dispatch } = this.props;
         const { user } = this.state;
         dispatch(postLogin(user.email, user.password)).then((response) => {
-            dispatch(push("/methodologies"));
+            dispatch(push("/dashboard"));
         }).catch((error) => {
             console.log(error);
         });
@@ -42,12 +46,14 @@ class SessionContainer extends Component {
 
     render() {
         return (
-            <div className="SessionContainer">
-                <LoginForm 
-                    onChange={ this.onChange }
-                    onSubmit={ this.onSubmit }
-                />
-            </div>
+            <MuiThemeProvider>
+                <div className="SessionContainer">
+                    <LoginForm 
+                        onChange={ this.onChange }
+                        onSubmit={ this.onSubmit }
+                    />
+                </div>
+            </MuiThemeProvider>
         )
     }
 }

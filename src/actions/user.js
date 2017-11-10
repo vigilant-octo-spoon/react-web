@@ -3,12 +3,12 @@ import { API } from '../services/api.js';
 export const POST_LOGIN = 'user/POST_LOGIN';
 export const POST_LOGIN_SUCCESS = 'user/POST_LOGIN_SUCCESS';
 export const POST_LOGIN_FAILED = 'user/POST_LOGIN_FAILED';
-export const LOGOUT = 'user/LOGOUT';
+export const DESTROY_SESSION = 'user/DESTROY_SESSION';
 
 export const postLogin = (email, password) => {
     return (dispatch) => {
         dispatch({ type: POST_LOGIN });
-        const data = { email, password }
+        const data = { email, password, admin: true }
         return new API("POST", "/sessions", { data }).exec().then((response) => {
             dispatch(postLoginSuccess(response.data));
             return response;
@@ -30,5 +30,11 @@ export const postLoginFailed = (payload) => {
     return {
         type: POST_LOGIN_FAILED,
         payload
+    }
+}
+
+export const destroySession = () => {
+    return {
+        type: DESTROY_SESSION,
     }
 }

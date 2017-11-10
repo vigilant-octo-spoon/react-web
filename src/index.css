@@ -1,5 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+#dashboard-table {
+  margin: 20px 40px;
 }
