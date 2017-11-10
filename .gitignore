@@ -1,5 +1,6 @@
 .envrc
 src/**/*.css
+build/
 
 #### joe made this: http://goel.io/joe
 
