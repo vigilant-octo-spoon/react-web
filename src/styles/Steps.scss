@@ -86,3 +86,26 @@
 		margin-left: 25px;
 	}
 }
+#bitacora-view {
+	@extend .list-padding;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+	h3 {
+		font-weight: normal;
+	}
+	ol {
+			padding-bottom:0 !important;
+			margin-bottom:0 !important;
+		}
+	span {
+		@extend .list-item-style;
+	}
+	p {
+		
+		@extend .subtitle;
+		display: block;
+	}
+	.conditions {
+		margin-left: 25px;
+	}
+}

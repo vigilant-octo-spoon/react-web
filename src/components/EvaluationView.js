@@ -12,14 +12,14 @@ class EvaluationView extends Component {
           <h3> Evaluación </h3>
           <ul>
             {this.props.evaluation.map((ev) => 
-                <li>
-                  <p><span>Conectar: </span> {ev.comments_connect}</p>:
+                <div>
+                  <p><span>Conectar: </span> {ev.comments_connect}</p>
                   <p><span>Seleccionar: </span> {ev.comments_select}</p>
                   <p><span>Planificación: </span> {ev.comments_planning}</p>
                   <p><span>Implementación: </span> {ev.comments_implementation}</p>
                   <p><span>Reflexión: </span> {ev.users_reflection}</p>
                   <p><span>Sugenrencias: </span> {ev.users_suggestions}</p>
-                </li>
+                </div>
             )}
           </ul>
       </div>

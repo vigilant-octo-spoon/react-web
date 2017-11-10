@@ -24,7 +24,7 @@ class StepsContainer extends Component {
                 { follow.step > 3 &&
                 <div>
                 
-                <CardTitle title="Planificación" />  
+                <CardTitle title="Paso 3: Planificación" />  
                 <PlanificarView title="Nombre de la iniciativa"
                                 text={ follow.step3.planning.initiative_name }
                 />
@@ -75,6 +75,7 @@ class StepsContainer extends Component {
             <div>
             <CardTitle title="Paso 4: Implementación" />  
               <BitacoraView binnacles={ follow.step4.binnacles }
+              id="bitacora-view"
                 />
             <Divider />
             </div>
@@ -83,6 +84,7 @@ class StepsContainer extends Component {
             <div>
             <CardTitle title="Paso 5: Evaluación" />  
               <EvaluationView evaluation={[ follow.step5.evaluation ]}
+              id="bitacora-view"
                 />
             <Divider />
             </div>
@@ -91,6 +93,7 @@ class StepsContainer extends Component {
             <div>
             <CardTitle title="Paso 6: Comunicar" />  
               <ReportView report={[ follow.step6.report ]}
+              id="bitacora-view"
                 />
             </div>
             }

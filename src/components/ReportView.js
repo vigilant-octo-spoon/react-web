@@ -12,9 +12,9 @@ class ReportView extends Component {
           <h3> Reporte </h3>
           <ul>
             {this.props.report.map((rep) => 
-                <li>
+                <div>
                 	<p>{rep.comment}</p>
-                </li>
+                </div>
             )}
           </ul>
       </div>
