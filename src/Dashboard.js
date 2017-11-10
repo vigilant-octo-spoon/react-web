@@ -17,7 +17,6 @@ class Dashboard extends Component {
             <NavbarContainer />
             <Route path={`${this.props.match.url}dashboard`} component={DashboardTableContainer} />
         </div>
-        
       </MuiThemeProvider>
     );
   }

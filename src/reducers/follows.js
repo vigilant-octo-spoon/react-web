@@ -10,7 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
     switch(action.type) {
         case GET_FOLLOWS_SUCCESS:
-            return state;
+            return action.payload;
         default:
             return state;
     }
